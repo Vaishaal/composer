@@ -58,6 +58,7 @@ def _tokenizer_needs_prefix_space(tokenizer: transformers.PreTrainedTokenizerBas
     Returns:
         bool: Whether or not the tokenizer needs a prefix space
     """
+    return True
     test_tokens = tokenizer(' a', add_special_tokens=False)['input_ids']
     assert isinstance(test_tokens, list)
     return len(test_tokens) == 1
